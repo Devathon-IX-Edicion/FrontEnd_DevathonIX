@@ -1,0 +1,23 @@
+.navbar {
+  height: 4rem;
+  padding-inline: var(--spacing-xs);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  ul {
+    display: flex;
+    gap: var(--spacing-sm);
+
+    a {
+      opacity: 0.5;
+      text-decoration: none;
+      transition: opacity 0.2s ease-in-out;
+
+      &.active {
+        opacity: 1;
+        text-decoration: underline;
+      }
+    }
+  }
+}

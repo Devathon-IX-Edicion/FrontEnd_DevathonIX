@@ -1,0 +1,15 @@
+@import './theme.css';
+@import './navbar.css';
+@import './magic-kitchen.css';
+
+html {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.container {
+  padding-inline: var(--spacing-xs);
+  margin-inline: auto;
+  max-width: 1400px;
+}

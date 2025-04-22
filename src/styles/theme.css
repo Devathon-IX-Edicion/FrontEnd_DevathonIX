@@ -1,0 +1,11 @@
+:root {
+  --background: #f0f8ff;
+  --foreground: #000;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+
+  --spacing-xs: clamp(0.5rem, 1vw + 0.5rem, 1rem);
+  --spacing-sm: clamp(1rem, 1vw + 1rem, 2rem);
+  --spacing-md: clamp(1rem, 1vw + 2rem, 3rem);
+}
