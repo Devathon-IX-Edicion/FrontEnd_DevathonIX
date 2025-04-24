@@ -1,11 +1,27 @@
 @import './theme.css';
+@import './fonts.css';
+@import './typography.css';
 @import './navbar.css';
 @import './magic-kitchen.css';
+@import './letter.css';
+@import './hufflepuff-magic-dishes.css';
+@import './utils.css';
+
 
 html {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -o-text-size-adjust: 100%;
+
 }
 
 .container {

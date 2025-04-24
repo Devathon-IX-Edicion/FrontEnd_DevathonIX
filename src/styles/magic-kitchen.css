@@ -1,68 +1,99 @@
 .magic-kitchen {
-  height: calc(100vh - 4rem);
-  border: 1px solid rgba(240, 248, 255, 0.089);
-  padding: var(--spacing-xs);
-
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: var(--spacing-xs);
-
-  .magic-kitchen__list-container {
-    border-right: 1px solid rgba(240, 248, 255, 0.089);
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-    height: calc(100vh - 4rem);
-
-    .magic-kitchen__search {
-        padding-inline: var(--spacing-xs);
-
-      input {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(240, 248, 255, 0.089);
-        border-radius: 999px;
-        padding-inline: var(--spacing-xs);
-      }
-    }
+  .st0 {
+    display: none;
+    fill: #3d5c6e;
   }
-
-  .magic-kitchen__list {
-    flex: 1;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-xs);
-    overflow-y: auto;
-    padding-inline: var(--spacing-xs);
-    mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 20%);
-
-    .magic-kitchen__item {
-      border: 1px solid rgba(240, 248, 255, 0.089);
-      border-radius: 20px;
-      padding: var(--spacing-sm);
-      background-color: var(--background);
-    }
+  .st1 {
+    fill: none;
+    stroke: #3b9665;
+    stroke-miterlimit: 10;
+  }
+  .st2 {
+    fill: #26252091;
+  }
+  .st3 {
+    fill: #26252091;
+  }
+  .st4 {
+    fill: #f1f1f1;
+  }
+  .st5 {
+    fill: #d3d3d3;
+  }
+  .st6 {
+    display: none;
+  }
+  .st7 {
+    display: none;
+    fill: #ffffff;
+  }
+  .st8 {
+    fill: #262621;
+  }
+  .st9 {
+    fill: #eeab1f;
+  }
+  .st10 {
+    fill: #f37b21;
+  }
+  .st11 {
+    fill: #f6851f;
+  }
+  .st12 {
+    fill: #dc8927;
+  }
+  .st13 {
+    fill: #d86c27;
+  }
+  .st14 {
+    fill: #ec5c24;
   }
 }
 
-.magic-kitchen__actions {
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-xs);
-    li {
-      width: 100px;
-      height: 2rem;
-      background-color: rgba(240, 248, 255, 0.089);
-      border-radius: 999px;
-    }
+#wisps g path {
+  opacity: 0;
+}
+
+.magic-kitchen {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+
+  @media (max-width: 940px) {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
   }
 
-  .kitchen {
+  margin-top: var(--spacing-lg);
+
+  .magic-kitchen__recipe-book {
+    background-image: url('/Group (1).png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-left: 18%;
+    padding-top: 5%;
+    text-align: center;
+    aspect-ratio: 9/11;
+  }
+}
+
+.magic-kitchen__cauldron {
+  position: relative;
+  display: flex;
+  align-items: end;
+
+  svg {
     width: 100%;
-    aspect-ratio: 1;
-    border: 1px dashed rgba(240, 248, 255, 0.2);
-    border-radius: 999px;
-    margin-block: var(--spacing-sm);
+  }
+
+  .magic-kitchen__cauldron-text {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 24%;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    color: var(--color-white);
+    font-size: clamp(1.6rem, 2vw + 1rem, 2.4rem);
   }
 }

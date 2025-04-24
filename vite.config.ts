@@ -1,13 +1,19 @@
 import react from '@vitejs/plugin-react-swc';
+import { resolve } from 'path';
 import { defineConfig } from 'vite';
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [ react() ],
+  plugins: [react()],
   css: {
     transformer: 'lightningcss',
   },
   build: {
-    cssMinify: 'lightningcss'
-  }
-})
+    cssMinify: 'lightningcss',
+  },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'),
+    },
+  },
+});

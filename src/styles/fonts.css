@@ -1,0 +1,35 @@
+/* @font-face {
+  font-family: 'Trajan Pro Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Trajan Pro Regular'),
+    url('/fonts/TrajanPro-Regular.woff') format('woff');
+} */
+
+@font-face {
+  font-family: 'Trajan Pro Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Trajan Pro Bold'),
+    url('/fonts/TrajanPro-Bold.woff') format('woff');
+}
+.trajan-pro-bold {
+  font-family: 'Trajan Pro Bold', serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.noto-naskh-arabic-regular {
+  font-family: "Noto Naskh Arabic", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.noto-naskh-arabic-bold {
+  font-family: "Noto Naskh Arabic", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}

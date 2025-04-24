@@ -1,0 +1,56 @@
+.letter {
+  background-image: url('/Letter-wrapper.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  aspect-ratio: 8.1/12;
+  width: 300px;
+  outline: 2px solid var(--color-border);
+  border-radius: 18px;
+
+  --default-shadow: 0 1px 1px hsl(0deg 0% 0% / 0.075),
+    0 2px 2px hsl(0deg 0% 0% / 0.075), 0 4px 4px hsl(0deg 0% 0% / 0.075),
+    0 8px 8px hsl(0deg 0% 0% / 0.075), 0 16px 16px hsl(0deg 0% 0% / 0.075);
+  box-shadow: var(--shadow, --default-shadow);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+
+  .content {
+    width: 60%;
+    height: 130px;
+    background-image: url('/letter-content-texture.png');
+    background-repeat: repeat;
+    background-size: 53px 17px;
+    background-position: center;
+    border-radius: 10px;
+    padding: 1rem;
+    outline: 2px solid var(--color-border);
+  }
+
+  .footer {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+.float-letter-container {
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+      circle at var(--x, 50%) var(--y, 10%),
+      #ffffff48,
+      #0000000f
+    );
+    pointer-events: none;
+  }
+}

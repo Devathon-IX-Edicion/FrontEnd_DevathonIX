@@ -1,11 +1,16 @@
 :root {
-  --background: #f0f8ff;
+  --background: #e1b225;
   --foreground: #000;
 
-  --font-sans: 'Inter', sans-serif;
-  --font-mono: 'Fira Code', monospace;
+  --font-sans: 'Noto Naskh Arabic', sans-serif;
+  --font-trajan-pro-bold: 'Trajan Pro Bold', sans-serif;
 
   --spacing-xs: clamp(0.5rem, 1vw + 0.5rem, 1rem);
   --spacing-sm: clamp(1rem, 1vw + 1rem, 2rem);
   --spacing-md: clamp(1rem, 1vw + 2rem, 3rem);
+  --spacing-lg: clamp(2rem, 1vw + 3rem, 4rem);
+  --spacing-xl: clamp(3rem, 1vw + 4rem, 5rem);
+
+  --color-border: #12130c;
+  --color-white: #fff;
 }

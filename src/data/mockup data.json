@@ -1,0 +1,74 @@
+{
+  "categories": [
+    {
+      "id_category": 1,
+      "name_category": "Postres",
+      "date_created": "2025-03-31",
+      "description": "Dulces y deliciosos postres"
+    },
+    {
+      "id_category": 2,
+      "name_category": "Bebidas",
+      "date_created": "2025-03-31",
+      "description": "Refrescantes y energéticas"
+    }
+  ],
+  "ingredients": [
+    {
+      "id_ingrediente": 1,
+      "name_ingrediente": "Azúcar",
+      "date_created": "2025-03-31",
+      "description": "Endulzante natural"
+    },
+    {
+      "id_ingrediente": 2,
+      "name_ingrediente": "Leche",
+      "date_created": "2025-03-31",
+      "description": "Base para muchas recetas"
+    }
+  ],
+  "dishes": [
+    {
+      "id_plato": 1,
+      "name_plato": "Flan",
+      "date_created": "2025-03-31",
+      "description": "Postre cremoso y dulce"
+    },
+    {
+      "id_plato": 2,
+      "name_plato": "Café Latte",
+      "date_created": "2025-03-31",
+      "description": "Bebida caliente con leche y café"
+    }
+  ],
+  "ingredient_plato": [
+    {
+      "id": 1,
+      "id_plato": 1,
+      "id_ingrediente": 1,
+      "time_coccion": "30m",
+      "id_efecto": 1,
+      "nivel_magia": 5
+    },
+    {
+      "id": 2,
+      "id_plato": 2,
+      "id_ingrediente": 2,
+      "time_coccion": "5m",
+      "id_efecto": 2,
+      "nivel_magia": 2
+    }
+  ],
+  "effects": [
+    {
+      "id_efecto": 1,
+      "name_efecto": "Energía",
+      "description": "Aumenta la energía del usuario"
+    },
+    {
+      "id_efecto": 2,
+      "name_efecto": "Relajación",
+      "description": "Disminuye el estrés"
+    }
+  ]
+}
