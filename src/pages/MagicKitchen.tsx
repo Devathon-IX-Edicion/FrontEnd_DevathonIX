@@ -70,7 +70,12 @@ function RecipeBook({
         Resetario
       </motion.h2>
 
-      <ul className='magic-kitchen__recipe-book__list'>
+      <ul
+        className='magic-kitchen__recipe-book__list'
+        style={{
+          scrollbarWidth: 'thin',
+        }}
+      >
         {ingredients.map((ingredient, index) => (
           <Item
             key={index}
