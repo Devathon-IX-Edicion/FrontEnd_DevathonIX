@@ -1,4 +1,4 @@
-import gsap from 'gsap';
+import { gsap } from 'gsap';
 import { useEffect } from 'react';
 
 type Props = {
@@ -63,25 +63,9 @@ export default function Cauldron({ ref }: Props) {
     floatBubbles.forEach((bubble) => {
       function shootBubble() {
         gsap.set(bubble, { x: 0, y: 0, opacity: 1 });
-        const angle = gsap.utils.random(-Math.PI / 2 - 0.7, -Math.PI / 2 + 0.7);
-        const velocity = gsap.utils.random(120, 220);
         const duration = gsap.utils.random(1.2, 2.2);
 
-        const vx = Math.cos(angle) * velocity;
-        const vy = Math.sin(angle) * velocity;
-
-        const gravity = 200;
-
         gsap.to(bubble, {
-          motionPath: {
-            path: [
-              { x: 0, y: 0 },
-              { x: vx * 0.5, y: vy * 0.5 + gravity * 0.25 },
-              { x: vx, y: vy + gravity * 1 },
-            ],
-            curviness: 1.2,
-            autoRotate: false,
-          },
           opacity: 0,
           duration,
           ease: 'power1.in',

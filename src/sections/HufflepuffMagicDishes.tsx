@@ -1,16 +1,21 @@
+import { useStoragePersist } from '@/store/useStoragePersist';
 import Letter from '../components/Letter';
 import { motion } from 'motion/react';
+import { Dishe } from '@/types';
 
-const List = Array.from({ length: 10 }, (_, i) => i + 1);
-
-function ContentLetter() {
-  return <div>Lorem ipsum dolor sit amet.</div>;
+function ContentLetter({ dishe }: { dishe: Dishe }) {
+  return <div>{dishe.description}</div>;
 }
-function TitleLetter() {
-  return <div>Lorem</div>;
+function TitleLetter({ dishe }: { dishe: Dishe }) {
+  return (
+    <div>
+      <h3 className='title-letter'>{dishe.name}</h3>
+    </div>
+  );
 }
 
 export default function HufflepuffMagicDishes() {
+  const dishs = useStoragePersist((state) => state.dish);
   return (
     <div className='hufflepuff-magic-dishes'>
       <motion.h2
@@ -21,11 +26,11 @@ export default function HufflepuffMagicDishes() {
         Hufflepuff Magic Dishes
       </motion.h2>
       <ul className='magic-dishes'>
-        {List.map((item) => (
+        {dishs.map((item, i) => (
           <Letter
-            key={item}
-            titleLetter={<TitleLetter />}
-            contentLetter={<ContentLetter />}
+            key={item.name + i}
+            titleLetter={<TitleLetter dishe={item} />}
+            contentLetter={<ContentLetter dishe={item} />}
           />
         ))}
       </ul>
