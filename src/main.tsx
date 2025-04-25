@@ -4,7 +4,5 @@ import router from './router.routes';
 import './styles/globals.css';
 
 createRoot(document.getElementById('root')!).render(
-  <>
-      <RouterProvider router={router} />
-  </>
+  <RouterProvider router={router} />
 );
