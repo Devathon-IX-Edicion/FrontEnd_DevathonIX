@@ -1,3 +1,4 @@
+import { countryFlags } from '@/data/data-region';
 import { useStorage } from '@/store/useStorage';
 import { enterInBlur } from '@/variants';
 import { motion, Variants } from 'motion/react';
@@ -66,7 +67,7 @@ const CunterConnects = () => {
               border: '2px solid var(--background)',
             }}
           >
-            {device.region}
+            {countryFlags[device.region]}
           </span>
         ))}
     </div>

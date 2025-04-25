@@ -1,8 +1,17 @@
 import gsap from 'gsap';
 import { useRef } from 'react';
 import Letter from './Letter';
+import { JSX } from 'react';
 
-export default function FloatLetter() {
+type FloatLetterProps = {
+  contentLetter: React.ReactNode | JSX.Element;
+  titleLetter: React.ReactNode | JSX.Element;
+};
+
+export default function FloatLetter({
+  contentLetter,
+  titleLetter,
+}: FloatLetterProps) {
   const contRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -58,12 +67,8 @@ export default function FloatLetter() {
       onMouseLeave={handleMouseLeave}
       ref={contRef}
       className='float-letter-container'
-      contentLetter={
-        <div className='float-letter' style={{}}>
-          Hola
-        </div>
-      }
-      titleLetter={<div className='float-letter'>Hola</div>}
+      contentLetter={contentLetter}
+      titleLetter={titleLetter}
       style={
         {
           position: 'fixed',

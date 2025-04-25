@@ -35,10 +35,14 @@
     font-size: 1.3rem;
     text-transform: uppercase;
     font-weight: 700;
+    width: 60%;
+    text-align: center;
   }
 }
 
 .float-letter-container {
+  outline: none;
+
   &::before {
     content: '';
     position: absolute;

@@ -1,3 +1,4 @@
+import { countryFlags } from '@/data/data-region';
 import { useStorage } from '@/store/useStorage';
 
 export default function ListDivices() {
@@ -15,7 +16,9 @@ export default function ListDivices() {
             style={{ '--color': device.color } as React.CSSProperties}
           >
             <span className='cicle'></span>
-            <p className='device-status text-xs'>{device.region}</p>
+            <p className='device-status text-xs'>
+              {countryFlags[device.region]}
+            </p>
           </div>
         ))}
       </ul>
