@@ -1,10 +1,10 @@
-import { createJSONStorage, persist } from 'zustand/middleware';
-import { Dishe, Ingredient } from '@/types';
+import { Dishe } from '@/types';
 import { create } from 'zustand';
+import { createJSONStorage, persist } from 'zustand/middleware';
 
 type State = {
-  ingredients: Ingredient[];
-  setIngredients: (ingredients: Ingredient[]) => void;
+  // ingredients: Ingredient[];
+  // setIngredients: (ingredients: Ingredient[]) => void;
 
   dish: Dishe[];
   addDish: (dish: Dishe) => void;
@@ -16,8 +16,8 @@ type State = {
 export const useStoragePersist = create(
   persist<State>(
     (set) => ({
-      ingredients: [],
-      setIngredients: (ingredients) => set({ ingredients }),
+      // ingredients: [],
+      // setIngredients: (ingredients) => set({ ingredients }),
       dish: [],
       addDish: (dish) => set((state) => ({ dish: [...state.dish, dish] })),
       name: '',

@@ -1,11 +1,12 @@
-import { Outlet } from 'react-router';
-import Navbar from './Navbar';
-import MagicWand from './MagicWand';
-import { toast, Toaster } from 'sonner';
-import { useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useStorage } from '@/store/useStorage';
-import { RealTimeCursorEvent } from '@/types';
 import { useStoragePersist } from '@/store/useStoragePersist';
+import { RealTimeCursorEvent } from '@/types';
+import { useEffect } from 'react';
+import { Outlet } from 'react-router';
+import { toast, Toaster } from 'sonner';
+import MagicWand from './MagicWand';
+import Navbar from './Navbar';
 
 export default function Layout() {
   const connectWs = useStorage((state) => state.connectWs);
@@ -13,7 +14,6 @@ export default function Layout() {
   const setDevices = useStorage((state) => state.setDevices);
   const removeDevice = useStorage((state) => state.removeDevice);
   const addDevice = useStorage((state) => state.addDevice);
-  const setIngredients = useStoragePersist((state) => state.setIngredients);
   const setDish = useStoragePersist((state) => state.addDish);
 
   useEffect(() => {
@@ -28,7 +28,6 @@ export default function Layout() {
 
       ws.onmessage = (data) => {
         const message = JSON.parse(data.data) as RealTimeCursorEvent;
-
         switch (message.type) {
           case 'device_connected':
             setDevices(message.payload);
@@ -38,9 +37,6 @@ export default function Layout() {
             break;
           case 'device_joined':
             addDevice(message.payload);
-            break;
-          case 'request_ingredients':
-            setIngredients(message.payload);
             break;
           case 'request_dish':
             setDish(message.payload.dishe);
@@ -69,15 +65,7 @@ export default function Layout() {
         ws.close();
       }
     };
-  }, [
-    addDevice,
-    connectWs,
-    removeDevice,
-    setDevices,
-    setDish,
-    setIngredients,
-    ws,
-  ]);
+  }, [ws]);
 
   return (
     <main>

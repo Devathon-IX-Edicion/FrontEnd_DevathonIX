@@ -1,9 +1,15 @@
-import { DEVICE_CONNECTION, DEVICE_JOINED, IDevices } from '@/types';
+import {
+  DEVICE_CONNECTION,
+  DEVICE_JOINED,
+  IDevices,
+  Ingredient,
+} from '@/types';
 import { create } from 'zustand';
 
 type State = {
   ws: WebSocket | null;
   connectWs: () => void;
+  ingredients: Ingredient[];
 
   devices: IDevices;
   setDevices: (devices: DEVICE_CONNECTION) => void;
@@ -19,7 +25,10 @@ export const useStorage = create<State>((set) => ({
   },
 
   devices: {},
-  setDevices: (devices) => set({ devices: devices.devices }),
+  ingredients: [],
+  setDevices: (devices) => {
+    set({ devices: devices.devices, ingredients: devices.ingredients });
+  },
   removeDevice: (id) =>
     set((state) => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars

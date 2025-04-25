@@ -30,6 +30,7 @@ export interface Ingredient {
 }
 export type DEVICE_CONNECTION = {
   devices: IDevices;
+  ingredients: Ingredient[];
 } & { id: DEVICE_ID };
 
 export type DEVICE_DISCONNECTION = DEVICE_ID;
@@ -59,6 +60,7 @@ export type RealTimeCursorEvent =
     }
   | {
       type: 'fetch_ingredients';
+      payload: null;
     }
   | {
       type: 'request_ingredients';
