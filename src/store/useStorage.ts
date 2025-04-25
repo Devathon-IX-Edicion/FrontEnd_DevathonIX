@@ -22,7 +22,7 @@ export const useStorage = create<State>((set) => ({
   connectWs: () => {
     const ws = new WebSocket(
       //'ws://localhost:8787/ws/realtime-devathon'
-      'ws://worker-devathon.server-codex.workers.dev/ws/realtime-devathon'
+      'wss://worker-devathon.server-codex.workers.dev/ws/realtime-devathon'
     );
     set({ ws });
   },
