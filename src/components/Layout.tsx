@@ -148,8 +148,10 @@ export default function Layout() {
         toastOptions={{
           className: 'toast-custom',
           style: {
-            backgroundColor: '#1f2937',
-            color: '#fff',
+            backgroundColor: 'var(--background)',
+            color: 'var(--foreground)',
+            border: '1px solid var(--foreground)',
+            borderRadius: '8px',
           },
         }}
       />
